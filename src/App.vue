@@ -36,6 +36,7 @@ import HelloWorld from './components/HelloWorld.vue'
 import Chapter1 from './components/Chapter1.vue'
 import Chapter2 from './components/Chapter2.vue'
 import Chapter3 from './components/Chapter3.vue'
+import Chapter4 from './components/Chapter4.vue'
 
 defineComponent({
   name: 'App',
@@ -44,23 +45,20 @@ defineComponent({
     Chapter1,
     Chapter2,
     Chapter3,
+    Chapter4,
   },
 })
 
 type Chapter = typeof Chapter1
   | typeof Chapter2
   | typeof Chapter3
+  | typeof Chapter4
 
 const menuList = readonly({
   1: 'CHAPTER 1',
   2: 'CHAPTER 2',
   3: 'CHAPTER 3',
   4: 'CHAPTER 4',
-  5: 'CHAPTER 5',
-  6: 'CHAPTER 6',
-  7: 'CHAPTER 7',
-  8: 'CHAPTER 8',
-  9: 'CHAPTER 9',
 })
 const activeMenu = ref(0)
 
