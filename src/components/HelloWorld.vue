@@ -1,6 +1,4 @@
 <template>
-  <h1>{{ msg }}</h1>
-
   <p>
     Recommended IDE setup:
     <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>
@@ -29,21 +27,12 @@
   </p>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { ref, defineComponent } from 'vue'
-export default defineComponent({
-  name: 'HelloWorld',
-  props: {
-    msg: {
-      type: String,
-      required: true
-    }
-  },
-  setup: () => {
-    const count = ref(0)
-    return { count }
-  }
+defineComponent({
+  name: 'HelloWorld'
 })
+const count = ref(0)
 </script>
 
 <style scoped>
