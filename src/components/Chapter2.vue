@@ -5,9 +5,9 @@
 
   <h3>オブジェクトや配列要素の表示</h3>
   <!-- 1 オブジェクトのプロパティを表示 -->
-  <p>{{ message.value }}</p>
+  <p>{{ message }}</p>
   <!-- 2 文字列の長さを表示 -->
-  <p>{{ message.value.length }}</p>
+  <p>{{ message.length }}</p>
   <!-- 3 リストのインデックス2を表示 -->
   <p>{{ list[2] }}</p>
   <!-- 4 プロパティを組み合わせて使用 -->
@@ -102,9 +102,7 @@ defineComponent({
   name: 'Chapter2',
 })
 
-const message = reactive({
-  value: 'Hello Vue.js!',
-})
+const message = ref('Hello Vue.js!')
 const list = ref(['りんご', 'ばなな', 'いちご'])
 const num = ref(1)
 
@@ -126,11 +124,11 @@ type Monster = {
   hp: number
 }
 
-const monsterList = reactive([
+const monsterList = reactive<Monster[]>([
   { id: 1, name: 'スライム', hp: 100 },
   { id: 2, name: 'ゴブリン', hp: 200 },
   { id: 3, name: 'ドラゴン', hp: 500 },
-] as Monster[])
+])
 const isTuyoi = (hp: number): boolean => hp > 300
 
 const monsterName = ref('キマイラ')
@@ -155,7 +153,7 @@ const doAttack = (index: number):void => {
   if (!monsterList[index].hp) doRemove(index)
 }
 
-const MHList = reactive([] as Monster[])
+const MHList = reactive<Monster[]>([])
 
 axios.get('MHList.json').then((response: AxiosResponse<Monster[]>) => {
   // 取得完了したら MHList リストに代入
