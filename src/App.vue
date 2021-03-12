@@ -83,7 +83,11 @@ const evalFunc = (menu: number): Chapter => eval(`Chapter${menu}`)
   display: flex;
 }
 .menu {
+  position: relative;
+  width: 30%;
+
   ul {
+    position: fixed;
     list-style: none;
     padding: 0 2rem 2rem;
 

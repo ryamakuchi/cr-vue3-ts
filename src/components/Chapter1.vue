@@ -1,5 +1,7 @@
 <template>
-  <h2>CH1 Vue.js とフレームワークの基礎知識</h2>
+  <h1>CH1 Vue.js とフレームワークの基礎知識</h1>
+
+  <h2>Vue.js の基本機能</h2>
 
   <h3>テキストのバインディング</h3>
   {{ data.message }}
