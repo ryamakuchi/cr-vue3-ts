@@ -105,7 +105,7 @@ defineComponent({
 const message = reactive({
   value: 'Hello Vue.js!',
 })
-const list = reactive(['りんご', 'ばなな', 'いちご'])
+const list = ref(['りんご', 'ばなな', 'いちご'])
 const num = ref(1)
 
 const count = ref(0)
