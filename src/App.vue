@@ -33,12 +33,14 @@
 <script setup lang="ts">
 import { defineComponent, readonly, ref } from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
+import Chapter1 from './components/Chapter1.vue'
 import Chapter2 from './components/Chapter2.vue'
 
 defineComponent({
   name: 'App',
   components: {
     HelloWorld,
+    Chapter1,
     Chapter2,
   },
 })
