@@ -24,7 +24,7 @@
       </template>
 
       <template v-else>
-        <component :is="evalFunc(activeMenu)" />
+        <component :is="menuFunc(activeMenu)" />
       </template>
     </main>
   </div>
@@ -69,7 +69,23 @@ const activeMenu = ref(0)
 const changeMenu = (menu: number): void => {
   activeMenu.value = menu
 }
-const evalFunc = (menu: number): Chapter => eval(`Chapter${menu}`)
+const menuFunc = (menu: number): Chapter | undefined => {
+  let chapter: Chapter | undefined
+  switch (menu) {
+    case 1: chapter = Chapter1
+      break
+    case 2: chapter = Chapter2
+      break
+    case 3: chapter = Chapter3
+      break
+    case 4: chapter = Chapter4
+      break
+    case 5: chapter = Chapter5
+      break
+    default: chapter = undefined
+  }
+  return chapter
+}
 </script>
 
 <style>
